@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
   }
 
   function saveSession(session, profileFromResponse = null) {
-    const accessToken = session?.access_token || session?.access_token;
+    const accessToken = session?.access_token || session?.token;
     localStorage.setItem('rdms_access_token', accessToken);
     if (session?.refresh_token) localStorage.setItem('rdms_refresh_token', session.refresh_token);
     setToken(accessToken);
